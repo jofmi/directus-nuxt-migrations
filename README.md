@@ -1,6 +1,10 @@
 # Directus Nuxt Migrations
 
-Directus Nuxt Migrations is a framework to declare modular database schemas within Nuxt and migrate them to a Directus database. At the moment, this package is only a proof of concept - but the same logic is already used in production by [Collectivo](https://github.com/collectivo-dev/collectivo).
+A code-first config tool for Directus and Nuxt. Declare modular database schemas within Nuxt and migrate them to Directus.
+
+At the moment, this package is only a proof of concept - but the same logic is already used in production by [Collectivo](https://github.com/collectivo-dev/collectivo).
+
+Happy for feedback, ideas, collaborators on this project - feel free to write to [Discussions](https://github.com/jofmi/directus-nuxt-migrations/discussions).
 
 Features:
 
