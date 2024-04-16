@@ -1,0 +1,42 @@
+{
+  "name": "directus-nuxt-migrations",
+  "version": "0.0.1",
+  "description": "A database schema migration tool for Nuxt and Directus.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Joël Foramitti",
+  "main": "./nuxt.config.ts",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev --p 3000",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "test": "vitest run",
+    "test:ui": "vitest --ui",
+    "format": "prettier --cache --check .",
+    "format:fix": "prettier --cache --check . --write",
+    "lint": "eslint --cache .",
+    "lint:fix": "eslint --cache . --fix"
+  },
+  "dependencies": {
+    "@directus/sdk": "^15.0.3",
+    "compare-versions": "^6.1.0",
+    "marked": "^12.0.0",
+    "winston": "^3.11.0"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "^1.0.8",
+    "@nuxt/test-utils": "^3.11.0",
+    "@typescript-eslint/eslint-plugin": "6.21.0",
+    "@typescript-eslint/parser": "6.21.0",
+    "@vitest/ui": "^1.2.2",
+    "eslint": "8.56.0",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-plugin-vue": "9.21.1",
+    "nuxt": "^3.10.1",
+    "prettier": "3.2.5",
+    "sass": "^1.70.0",
+    "vitest": "^1.2.2"
+  }
+}

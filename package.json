@@ -1,0 +1,16 @@
+{
+  "name": "directus-nuxt-migrations-monorepo",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "dev": "pnpm -F=test-app run dev --host"
+  },
+  "author": "Joël Foramitti",
+  "license": "MIT",
+  "dependencies": {
+    "directus-nuxt-migrations": "workspace:*"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

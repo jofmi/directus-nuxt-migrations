@@ -1,0 +1,54 @@
+version: "3"
+
+services:
+  directus:
+    image: directus/directus:10.10.4
+    ports:
+      - 8055:8055
+    volumes:
+      - ./directus/uploads:/directus/uploads
+    depends_on:
+      directus-db:
+        condition: service_healthy
+    environment:
+      PUBLIC_URL: ${DIRECTUS_URL}
+      KEY: ${DIRECTUS_KEY}
+      SECRET: ${DIRECTUS_SECRET}
+
+      ADMIN_EMAIL: ${DIRECTUS_ADMIN_EMAIL}
+      ADMIN_PASSWORD: ${DIRECTUS_ADMIN_PASSWORD}
+
+      CORS_ENABLED: "true"
+      CORS_ORIGIN: "true"
+
+      DB_CLIENT: "pg"
+      DB_HOST: "directus-db"
+      DB_PORT: "5432"
+      DB_DATABASE: "directus"
+      DB_USER: "directus"
+      DB_PASSWORD: ${DIRECTUS_DB_PASSWORD}
+
+      LOG_LEVEL: "debug"
+
+      NUXT_API_URL: ${NUXT_API_URL}
+      NUXT_API_TOKEN: ${NUXT_API_TOKEN}
+      FLOWS_ENV_ALLOW_LIST: "NUXT_API_URL,NUXT_API_TOKEN"
+
+  directus-db:
+    image: postgis/postgis:15-3.4-alpine
+    volumes:
+      - directus-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    environment:
+      POSTGRES_USER: "directus"
+      POSTGRES_PASSWORD: ${DIRECTUS_DB_PASSWORD}
+      POSTGRES_DB: "directus"
+    ports:
+      - 5432:5432
+
+volumes:
+  directus-db-data:
