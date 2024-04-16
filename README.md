@@ -10,6 +10,7 @@ Features:
 
 - **Code-first config**: A database schema for Directus can be defined within your Nuxt app. Schemas can include collections, fields, flows, relations, and translations.
 - **Migration tool**: A tool to push migrations from Nuxt to Directus via the Directus SDK
+- **Versioning**: Create new versions of a schema and push updates to the database.
 - **Typesafe**: The framework uses the Directus SDK for type checking
 - **Modularity**: Schemas can be separated into modular schema extensions, using Nuxt layers (similar to apps in Django)
 
